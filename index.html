@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Dashboard | Semantic HTML5 & WCAG 2.1 Compliant</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; }
+        .layout { display: flex; }
+        aside { width: 200px; background: #f4f4f4; padding: 15px; }
+        main { flex: 1; padding: 20px; }
+        header, footer { background: #222; color: #fff; padding: 15px; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        dialog { border: 1px solid #333; padding: 20px; border-radius: 8px; }
+        .skip-link { position: absolute; left: -9999px; }
+        .skip-link:focus { left: 10px; top: 10px; background: yellow; color: black; padding: 5px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <h1>Enterprise Dashboard</h1>
+        <nav aria-label="Primary Navigation">
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#reports">Reports</a></li>
+                <li><a href="#settings">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="layout">
+        <aside aria-label="Sidebar">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#analytics">Analytics</a></li>
+            </ul>
+        </aside>
+
+        <main id="main-content">
+            <section aria-labelledby="overview-heading">
+                <h2 id="overview-heading">Overview</h2>
+                
+                <article>
+                    <h3>Performance Metrics</h3>
+                    <p>Our enterprise dashboard provides semantic and accessible insights.</p>
+                    
+                    <table>
+                        <caption>Quarterly Sales Report 2026</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Quarter</th>
+                                <th scope="col">Revenue</th>
+                                <th scope="col">Growth</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Q1</th>
+                                <td>$120,000</td>
+                                <td>12%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Q2</th>
+                                <td>$150,000</td>
+                                <td>15%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+
+                <form aria-labelledby="form-heading">
+                    <h3 id="form-heading">Contact Support</h3>
+                    <fieldset>
+                        <legend>Contact Information</legend>
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required>
+                        
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" aria-label="Your message"></textarea>
+                        
+                        <button type="submit">Submit</button>
+                    </fieldset>
+                </form>
+
+                <button type="button" aria-haspopup="dialog" onclick="document.getElementById('info-modal').showModal()">Open Info Modal</button>
+                <dialog id="info-modal" aria-labelledby="modal-title" aria-describedby="modal-desc">
+                    <h2 id="modal-title">Important Information</h2>
+                    <p id="modal-desc">This is an accessible modal dialog using native HTML5 dialog element with proper ARIA attributes.</p>
+                    <button type="button" aria-label="Close dialog" onclick="document.getElementById('info-modal').close()">Close</button>
+                </dialog>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Enterprise Dashboard. Built with Semantic HTML5 &amp; WCAG 2.1 Compliance by Supriyo Mondal.</p>
+    </footer>
+
+</body>
+</html>
